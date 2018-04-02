@@ -1,5 +1,6 @@
 (ns happyland.core
   (:require
+   [clojure.set :as set]
    [clojure.edn :as edn]
    [clojure.string :as string]
    [google-apps-clj.google-sheets-v4 :as sheets]))
@@ -55,7 +56,13 @@
 
 (defn split-cell
   [cell]
-  (let [all (mapcat #(string/split % #"&") (string/split cell #","))]
+  (let [all (mapcat
+             (fn [condition]
+               #(= \( (first %))
+               (map
+                string/trim
+                (string/split condition #"&")))
+             (string/split cell #","))]
     (remove #(= \( (first %)) all)))
 
 (defn extract-matches
@@ -79,3 +86,20 @@
            inverse (into {} (map (fn [match] [match [name]]) matches))]
        (merge-with concat m inverse)))
    {} rows))
+
+(defn merge-rows
+  [sheets]
+  (apply concat (vals sheets)))
+
+(defn causal-network
+  [sheets]
+  (let [rows (merge-rows sheets)
+        conditions (merge-matches #"condition" rows)
+        effects (merge-matches #"effect" rows)
+        verbs (set (concat (keys conditions) (keys effects)))]
+    (into
+     {}
+     (map
+      (fn [verb]
+        [verb {:needed (get conditions verb) :provided (get effects verb)}])
+      verbs))))
