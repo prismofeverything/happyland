@@ -1,5 +1,7 @@
 (ns happyland.core
   (:require
+   [clojure.edn :as edn]
+   [clojure.string :as string]
    [google-apps-clj.google-sheets-v4 :as sheets]))
 
 (def default-creds "resources/google-creds.edn")
@@ -17,14 +19,26 @@
 
 (def sheet-layout
   {"Places"
-   {:row 11
+   {:row 21
     :column "Q"}
    "Denizens"
    {:row 8
     :column "P"}
    "Items"
    {:row 13
-    :column "N"}})
+    :column "N"}
+   "Missions"
+   {:row 2
+    :column "B"}})
+
+(defn collate-rows
+  [all]
+  (let [header (first all)
+        rows (rest all)]
+    (map
+     (fn [row]
+       (into {} (map vector header row)))
+     rows)))
 
 (defn sheet-map
   [auth id]
@@ -35,7 +49,33 @@
        (let [title (get sheet "title")
              layout (get sheet-layout title)
              grid (str title "!A1:" (:column layout) (:row layout))
-             data (sheets/get-cell-values auth id [grid])]
-         (assoc m title data)))
+             data (first (sheets/get-cell-values auth id [grid]))]
+         (assoc m title (collate-rows data))))
      {} (map #(get % "properties") sheets))))
 
+(defn split-cell
+  [cell]
+  (let [all (mapcat #(string/split % #"&") (string/split cell #","))]
+    (remove #(= \( (first %)) all)))
+
+(defn extract-matches
+  [match row]
+  (let [matches
+        (filter
+         (fn [[key value]]
+           (and value (re-find match key)))
+         row)]
+    [(get row "name")
+     (mapcat
+      (fn [[key value]]
+        (split-cell value))
+      matches)]))
+
+(defn merge-matches
+  [match rows]
+  (reduce
+   (fn [m row]
+     (let [[name matches] (extract-matches match row)
+           inverse (into {} (map (fn [match] [match [name]]) matches))]
+       (merge-with concat m inverse)))
+   {} rows))
