@@ -3,6 +3,7 @@
    [clojure.set :as set]
    [clojure.edn :as edn]
    [clojure.string :as string]
+   [clojure.pprint :as pprint]
    [google-apps-clj.google-sheets-v4 :as sheets]))
 
 (def default-creds "resources/google-creds.edn")
@@ -103,3 +104,7 @@
       (fn [verb]
         [verb {:needed (get conditions verb) :provided (get effects verb)}])
       verbs))))
+
+(defn print-network
+  [network]
+  (pprint/pprint (sort-by first network)))
