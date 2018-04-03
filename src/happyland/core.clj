@@ -21,14 +21,17 @@
 
 (def sheet-layout
   {"Places"
-   {:row 21
+   {:row 22
     :column "Q"}
    "Denizens"
-   {:row 8
+   {:row 11
     :column "P"}
    "Items"
-   {:row 13
+   {:row 19
     :column "N"}
+   "Characters"
+   {:row 2
+    :column "B"}
    "Missions"
    {:row 2
     :column "B"}})
