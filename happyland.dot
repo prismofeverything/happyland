@@ -1,0 +1,399 @@
+digraph happyland {
+    "float" [label="float"]
+    "CAVE" [label="CAVE"]
+    "poison" [label="poison"]
+    "cool" [label="cool"]
+    "portend" [label="portend"]
+    "message" [label="message"]
+    "swallow" [label="swallow"]
+    "light" [label="light"]
+    "cauldron" [label="cauldron"]
+    "cover" [label="cover"]
+    "ink" [label="ink"]
+    "shovel" [label="shovel"]
+    "accelerate" [label="accelerate"]
+    "invert" [label="invert"]
+    "Fish" [label="Fish"]
+    "TREE" [label="TREE"]
+    "freeze" [label="freeze"]
+    "scavenge" [label="scavenge"]
+    "hide" [label="hide"]
+    "paper" [label="paper"]
+    "FIRE" [label="FIRE"]
+    "apple" [label="apple"]
+    "pour" [label="pour"]
+    "SWAMP" [label="SWAMP"]
+    "tunnel" [label="tunnel"]
+    "brew" [label="brew"]
+    "illuminate" [label="illuminate"]
+    "GLACIER" [label="GLACIER"]
+    "shelter" [label="shelter"]
+    "roar" [label="roar"]
+    "incinerate" [label="incinerate"]
+    "unfurl" [label="unfurl"]
+    "stab" [label="stab"]
+    "lift" [label="lift"]
+    "fuel" [label="fuel"]
+    "PASS" [label="PASS"]
+    "dry" [label="dry"]
+    "sword" [label="sword"]
+    "PORTAL" [label="PORTAL"]
+    "MEADOW" [label="MEADOW"]
+    "travel" [label="travel"]
+    "Gain insight" [label="Gain insight"]
+    "water" [label="water"]
+    "sailboat" [label="sailboat"]
+    "HILLS" [label="HILLS"]
+    "unlock" [label="unlock"]
+    "Snake" [label="Snake"]
+    "land" [label="land"]
+    "sapling" [label="sapling"]
+    "Monodrone" [label="Monodrone"]
+    "gift" [label="gift"]
+    "spiral" [label="spiral"]
+    "envelop" [label="envelop"]
+    "foliage" [label="foliage"]
+    "disappear" [label="disappear"]
+    "rope" [label="rope"]
+    "RIVER" [label="RIVER"]
+    "hop" [label="hop"]
+    "luck" [label="luck"]
+    "catch" [label="catch"]
+    "surprise" [label="surprise"]
+    "rest" [label="rest"]
+    "net" [label="net"]
+    "stomp" [label="stomp"]
+    "swim" [label="swim"]
+    "tie" [label="tie"]
+    "carry away" [label="carry away"]
+    "gather" [label="gather"]
+    "Bear" [label="Bear"]
+    "Troll" [label="Troll"]
+    "sneak" [label="sneak"]
+    "invigorate" [label="invigorate"]
+    "traverse" [label="traverse"]
+    "orbit" [label="orbit"]
+    "destroy" [label="destroy"]
+    "gamma burst" [label="gamma burst"]
+    "Old woman" [label="Old woman"]
+    "fall" [label="fall"]
+    "teleport" [label="teleport"]
+    "ladle" [label="ladle"]
+    "sail" [label="sail"]
+    "weave" [label="weave"]
+    "climb" [label="climb"]
+    "hold" [label="hold"]
+    "stone" [label="stone"]
+    "music" [label="music"]
+    "devour" [label="devour"]
+    "eye" [label="eye"]
+    "build" [label="build"]
+    "rend" [label="rend"]
+    "peer" [label="peer"]
+    "heat" [label="heat"]
+    "scope" [label="scope"]
+    "sink" [label="sink"]
+    "advise" [label="advise"]
+    "walk" [label="walk"]
+    "extinguish" [label="extinguish"]
+    "regale" [label="regale"]
+    "CLIFFS" [label="CLIFFS"]
+    "crystal ball" [label="crystal ball"]
+    "eat" [label="eat"]
+    "shatter" [label="shatter"]
+    "Old man" [label="Old man"]
+    "SEA" [label="SEA"]
+    "slash" [label="slash"]
+    "dig" [label="dig"]
+    "fly" [label="fly"]
+    "DESERT" [label="DESERT"]
+    "Gnome" [label="Gnome"]
+    "ROAD" [label="ROAD"]
+    "Obor" [label="Obor"]
+    "hit" [label="hit"]
+    "douse" [label="douse"]
+    "BOG" [label="BOG"]
+    "calm" [label="calm"]
+    "capture" [label="capture"]
+    "bellow" [label="bellow"]
+    "Rabbit" [label="Rabbit"]
+    "plant tree" [label="plant tree"]
+    "bite" [label="bite"]
+    "gaze" [label="gaze"]
+    "fill water" [label="fill water"]
+    "feed" [label="feed"]
+    "CANYON" [label="CANYON"]
+    "meditate" [label="meditate"]
+    "WOODS" [label="WOODS"]
+    "broom" [label="broom"]
+    "beam energy" [label="beam energy"]
+    "SPIRAL" [label="SPIRAL"]
+    "lantern" [label="lantern"]
+    "Giant worm" [label="Giant worm"]
+    "insight" [label="insight"]
+    "still" [label="still"]
+    "shade" [label="shade"]
+    "cut" [label="cut"]
+    "wood" [label="wood"]
+    "ford" [label="ford"]
+    "Gecko" [label="Gecko"]
+    "WATERFALL" [label="WATERFALL"]
+    "tea" [label="tea"]
+    "sacrifice" [label="sacrifice"]
+    "color" [label="color"]
+    "sweep" [label="sweep"]
+    "throw" [label="throw"]
+    "Octopus" [label="Octopus"]
+    "dive" [label="dive"]
+    "MOUNTAIN" [label="MOUNTAIN"]
+    "grow" [label="grow"]
+    "forge" [label="forge"]
+    "cook" [label="cook"]
+    "unite" [label="unite"]
+    "TOWER" [label="TOWER"]
+    "scald" [label="scald"]
+    "mind control" [label="mind control"]
+    "hoist" [label="hoist"]
+    "excavate" [label="excavate"]
+    "material" [label="material"]
+    "read mind" [label="read mind"]
+    "balloon" [label="balloon"]
+    "ROAD"->"accelerate"
+    "Old man"->"advise"
+    "beam energy"->"Old woman"
+    "beam energy"->"Troll"
+    "Monodrone"->"beam energy"
+    "Troll"->"bellow"
+    "Snake"->"bite"
+    "brew"->"tea"
+    "build"->"RIVER"
+    "calm"->"Bear"
+    "MEADOW"->"calm"
+    "eye"->"calm"
+    "tea"->"calm"
+    "capture"->"Snake"
+    "RIVER"->"carry away"
+    "catch"->"Fish"
+    "catch"->"Snake"
+    "Bear"->"catch"
+    "rope"->"catch"
+    "climb"->"GLACIER"
+    "climb"->"CANYON"
+    "climb"->"CLIFFS"
+    "climb"->"MOUNTAIN"
+    "Gecko"->"climb"
+    "rope"->"climb"
+    "Obor"->"climb"
+    "Fish"->"color"
+    "cook"->"Rabbit"
+    "cook"->"tea"
+    "cauldron"->"cook"
+    "cool"->"cauldron"
+    "WATERFALL"->"cool"
+    "paper"->"cover"
+    "cut"->"Fish"
+    "sword"->"cut"
+    "destroy"->"sword"
+    "CLIFFS"->"destroy"
+    "eye"->"destroy"
+    "stone"->"destroy"
+    "Giant worm"->"devour"
+    "dig"->"sapling"
+    "shovel"->"dig"
+    "SEA"->"disappear"
+    "dive"->"SEA"
+    "dive"->"WATERFALL"
+    "dive"->"SWAMP"
+    "douse"->"Gnome"
+    "douse"->"wood"
+    "WATERFALL"->"douse"
+    "cauldron"->"douse"
+    "ladle"->"douse"
+    "DESERT"->"dry"
+    "eat"->"apple"
+    "Fish"->"eat"
+    "balloon"->"envelop"
+    "excavate"->"CAVE"
+    "Giant worm"->"excavate"
+    "extinguish"->"lantern"
+    "TOWER"->"extinguish"
+    "CLIFFS"->"fall"
+    "feed"->"Bear"
+    "feed"->"Rabbit"
+    "Fish"->"feed"
+    "Rabbit"->"feed"
+    "apple"->"feed"
+    "fill water"->"cauldron"
+    "fill water"->"ladle"
+    "RIVER"->"fill water"
+    "SEA"->"fill water"
+    "WATERFALL"->"fill water"
+    "SWAMP"->"fill water"
+    "SEA"->"float"
+    "SPIRAL"->"float"
+    "fly"->"TOWER"
+    "balloon"->"fly"
+    "foliage"->"Rabbit"
+    "TREE"->"foliage"
+    "sapling"->"foliage"
+    "ford"->"RIVER"
+    "rope"->"ford"
+    "forge"->"sword"
+    "freeze"->"eye"
+    "GLACIER"->"freeze"
+    "fuel"->"balloon"
+    "wood"->"fuel"
+    "PORTAL"->"gamma burst"
+    "gather"->"Monodrone"
+    "gather"->"net"
+    "Gnome"->"gather"
+    "gaze"->"Troll"
+    "gaze"->"crystal ball"
+    "Old man"->"gaze"
+    "Snake"->"gaze"
+    "gift"->"Old man"
+    "Rabbit"->"gift"
+    "tea"->"gift"
+    "grow"->"Gecko"
+    "TREE"->"grow"
+    "Monodrone"->"grow"
+    "sapling"->"grow"
+    "heat"->"cauldron"
+    "FIRE"->"heat"
+    "DESERT"->"heat"
+    "WOODS"->"hide"
+    "CAVE"->"hide"
+    "Octopus"->"hide"
+    "broom"->"hit"
+    "shovel"->"hit"
+    "hoist"->"sailboat"
+    "rope"->"hoist"
+    "Troll"->"hold"
+    "tea"->"hop"
+    "illuminate"->"CAVE"
+    "illuminate"->"PORTAL"
+    "FIRE"->"illuminate"
+    "TOWER"->"illuminate"
+    "lantern"->"illuminate"
+    "wood"->"illuminate"
+    "incinerate"->"Troll"
+    "PORTAL"->"incinerate"
+    "eye"->"incinerate"
+    "ink"->"paper"
+    "Octopus"->"ink"
+    "insight"->"Gain insight"
+    "Old man"->"insight"
+    "invert"->"SPIRAL"
+    "Monodrone"->"invert"
+    "invigorate"->"eye"
+    "RIVER"->"invigorate"
+    "land"->"balloon"
+    "lift"->"balloon"
+    "lift"->"sailboat"
+    "Troll"->"lift"
+    "light"->"lantern"
+    "light"->"wood"
+    "FIRE"->"light"
+    "lantern"->"light"
+    "luck"->"eye"
+    "Rabbit"->"luck"
+    "material"->"RIVER"
+    "stone"->"material"
+    "wood"->"material"
+    "MOUNTAIN"->"meditate"
+    "message"->"Old woman"
+    "paper"->"message"
+    "mind control"->"Octopus"
+    "Old woman"->"mind control"
+    "music"->"Snake"
+    "net"->"Fish"
+    "net"->"Octopus"
+    "net"->"net"
+    "rope"->"net"
+    "orbit"->"SPIRAL"
+    "Monodrone"->"orbit"
+    "balloon"->"orbit"
+    "MOUNTAIN"->"peer"
+    "plant tree"->"Old woman"
+    "apple"->"plant tree"
+    "sapling"->"plant tree"
+    "Snake"->"poison"
+    "portend"->"eye"
+    "crystal ball"->"portend"
+    "pour"->"ladle"
+    "read mind"->"Monodrone"
+    "Octopus"->"read mind"
+    "crystal ball"->"read mind"
+    "regale"->"Troll"
+    "Old man"->"regale"
+    "Bear"->"rend"
+    "MEADOW"->"rest"
+    "roar"->"Gnome"
+    "Bear"->"roar"
+    "sacrifice"->"Giant worm"
+    "Rabbit"->"sacrifice"
+    "sail"->"SEA"
+    "sailboat"->"sail"
+    "cauldron"->"scald"
+    "Gnome"->"scavenge"
+    "MOUNTAIN"->"scope"
+    "TREE"->"shade"
+    "shatter"->"PORTAL"
+    "crystal ball"->"shatter"
+    "CAVE"->"shelter"
+    "sailboat"->"shelter"
+    "SPIRAL"->"sink"
+    "BOG"->"sink"
+    "sword"->"slash"
+    "Octopus"->"sneak"
+    "SPIRAL"->"spiral"
+    "TOWER"->"spiral"
+    "stab"->"Troll"
+    "sword"->"stab"
+    "still"->"eye"
+    "Gecko"->"still"
+    "Troll"->"stomp"
+    "surprise"->"Gecko"
+    "surprise"->"Gnome"
+    "surprise"->"Octopus"
+    "surprise"->"eye"
+    "Octopus"->"surprise"
+    "broom"->"surprise"
+    "sword"->"surprise"
+    "SEA"->"swallow"
+    "SWAMP"->"swallow"
+    "broom"->"sweep"
+    "swim"->"RIVER"
+    "swim"->"SEA"
+    "swim"->"BOG"
+    "swim"->"SWAMP"
+    "PORTAL"->"teleport"
+    "throw"->"crystal ball"
+    "throw"->"net"
+    "throw"->"stone"
+    "Obor"->"throw"
+    "rope"->"tie"
+    "ROAD"->"travel"
+    "RIVER"->"traverse"
+    "Giant worm"->"tunnel"
+    "unfurl"->"sailboat"
+    "Gnome"->"unfurl"
+    "unite"->"sword"
+    "unlock"->"TOWER"
+    "Old woman"->"unlock"
+    "walk"->"WATERFALL"
+    "walk"->"HILLS"
+    "walk"->"MEADOW"
+    "walk"->"TREE"
+    "walk"->"WOODS"
+    "walk"->"PASS"
+    "walk"->"FIRE"
+    "walk"->"ROAD"
+    "walk"->"PORTAL"
+    "walk"->"DESERT"
+    "Obor"->"walk"
+    "water"->"sapling"
+    "ladle"->"water"
+    "weave"->"rope"
+    "Old woman"->"weave"
+}

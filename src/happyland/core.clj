@@ -24,7 +24,7 @@
    {:row 22
     :column "Q"}
    "Denizens"
-   {:row 11
+   {:row 13
     :column "P"}
    "Items"
    {:row 19
@@ -95,19 +95,59 @@
   [sheets]
   (apply concat (vals sheets)))
 
-(defn causal-network
+(defn verb-network
   [sheets]
   (let [rows (merge-rows sheets)
         conditions (merge-matches #"condition" rows)
         effects (merge-matches #"effect" rows)
         verbs (set (concat (keys conditions) (keys effects)))]
-    (into
-     {}
+    (sort-by
+     first
      (map
       (fn [verb]
         [verb {:needed (get conditions verb) :provided (get effects verb)}])
       verbs))))
 
-(defn print-network
-  [network]
-  (pprint/pprint (sort-by first network)))
+(defn verbs->nodes
+  [verbs]
+  (apply
+   set/union
+   (map
+    (fn [[verb {:keys [needed provided]}]]
+      (set (cons verb (concat needed provided))))
+    verbs)))
+
+(defn verbs->edges
+  [verbs]
+  (reduce
+   into []
+   (map
+    (fn [[verb {:keys [needed provided]}]]
+      (let [from (map (fn [need] {:from verb :to need}) needed)
+            to (map (fn [provide] {:from provide :to verb}) provided)]
+        (concat from to)))
+    verbs)))
+
+(defn keyword-graph
+  [sheets]
+  (let [verbs (verb-network sheets)]
+    {:nodes (verbs->nodes verbs)
+     :edges (verbs->edges verbs)}))
+
+(defn emit-node
+  [node]
+  (str "    \"" node "\" [label=\"" node "\"]"))
+
+(defn emit-edge
+  [{:keys [from label to]}]
+  (let [label-output (if label (str " [label=\"" label "\"]"))]
+    (str "    \"" from "\"->\"" to "\"" label-output)))
+
+(defn emit-dot
+  [{:keys [nodes edges]}]
+  (let [out-nodes (mapv emit-node nodes)
+        out-edges (mapv emit-edge edges)
+        header "digraph happyland {"
+        footer "}"
+        all (reduce into [[header] out-nodes out-edges [footer]])]
+    (string/join "\n" all)))
